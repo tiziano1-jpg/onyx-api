@@ -1,13 +1,19 @@
 {
-  "name": "discord-bot",
+  "name": "onyx-api-server",
   "version": "1.0.0",
-  "main": "main.js",
-  "type": "module",
+  "description": "Onyx Launcher API Server",
+  "main": "server.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "node server.js"
   },
+  "author": "Onyx Team",
+  "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.0.0",
-    "dotenv": "^16.0.0"
+    "cors": "^2.8.6",
+    "dotenv": "^16.0.0",
+    "express": "^5.2.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
