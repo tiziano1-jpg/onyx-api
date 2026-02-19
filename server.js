@@ -26,13 +26,9 @@ app.use((req, res, next) => {
 // ==========================================
 const DEFAULT_RAILWAY_FILE = path.join(__dirname, 'users-railway.json');
 const DEFAULT_LOCAL_FILE = 'C:\\Users\\webor\\Desktop\\bot_register\\users.json';
- const DEFAULT_RAILWAY_FILE = path.join(__dirname, 'users-railway.json');
-   const DEFAULT_LOCAL_FILE = 'C:\\Users\\webor\\Desktop\\bot_register\\users.json';
-   let BOT_USERS_FILE;
-   if (process.env.BOT_USERS_FILE) BOT_USERS_FILE = process.env.BOT_USERS_FILE;
-   else if (fs.existsSync(DEFAULT_RAILWAY_FILE)) BOT_USERS_FILE = DEFAULT_RAILWAY_FILE;
-   else BOT_USERS_FILE = DEFAULT_LOCAL_FILE;
-   console.log('[DB] Using database file:', BOT_USERS_FILE);
+const DEFAULT_RAILWAY_FILE = path.join(__dirname, 'users-railway.json');
+const DEFAULT_LOCAL_FILE = 'C:\\Users\\webor\\Desktop\\bot_register\\users.json';
+
 let BOT_USERS_FILE;
 if (process.env.BOT_USERS_FILE) {
   BOT_USERS_FILE = process.env.BOT_USERS_FILE;
@@ -41,6 +37,8 @@ if (process.env.BOT_USERS_FILE) {
 } else {
   BOT_USERS_FILE = DEFAULT_LOCAL_FILE;
 }
+
+console.log('[DB] Using database file:', BOT_USERS_FILE);
 
 console.log('[DB] Using database file:', BOT_USERS_FILE);
 
@@ -178,4 +176,3 @@ process.on('SIGINT', () => {
   console.log('\n[INFO] Shutting down API server...');
   process.exit(0);
 });
-
